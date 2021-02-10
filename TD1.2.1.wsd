@@ -1,0 +1,26 @@
+@startuml
+class Etudiant{
+    NumeroEtudiant
+    Nom
+    Prenom
+    DateDeNaissance
+}
+class Cours{
+    Titre
+    Codedumodule
+}
+class Examen{
+    DatePotentiel
+    coefficient
+}
+class Professeur{
+    Nom
+    Prenom
+}
+Etudiant "0..*" -- "0..*" Cours
+Cours "1" -- "1" Examen
+Professeur "1" -- "1" Cours
+Etudiant "1" -- "1" Examen
+(Etudiant, Examen) . Note
+
+@enduml
