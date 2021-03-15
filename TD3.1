@@ -25,8 +25,15 @@ Stage"*" --"1" Entreprise
 
 class Promotion{
     nom
-    }
-
+}
+class GroupeTP{
+    nom
+}
+class GroupeTD{
+    nom
+}
 Stage -- "1" Promotion
-Etudiant -- "1" Promotion
+Etudiant -- "1" GroupeTP
+GroupeTP -- "1" GroupeTD
+GroupeTD --"1" Promotion 
 @enduml
