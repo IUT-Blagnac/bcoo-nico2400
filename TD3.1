@@ -6,4 +6,20 @@ class Entreprise {
     siège_social
 }
 
+class Etudiant {
+    numINE
+    nom
+    prenom
+    moyenne_General
+}
+
+class Stage {
+    lieu
+    dateDebut
+    dateFin
+    nomTuteur
+    theme
+}
+
+Stage --"1" Entreprise
 @enduml
