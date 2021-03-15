@@ -11,13 +11,14 @@ class Etudiant {
     nom
     prenom
     moyenne_General
+    noteStage
 }
 
 class Stage {
     lieu
     dateDebut
     dateFin
-    nomTuteur
+    nomTuteurEntreprise
     theme
 }
 
@@ -32,8 +33,17 @@ class GroupeTP{
 class GroupeTD{
     nom
 }
+class Enseignant{
+    nom
+    prenom
+    specialité
+}
+
 Stage -- "1" Promotion
 Etudiant -- "1" GroupeTP
 GroupeTP -- "1" GroupeTD
-GroupeTD --"1" Promotion 
+GroupeTD --"1" Promotion
+Stage -- "0..1 \nTuteur" Enseignant
+Etudiant -- Stage
+
 @enduml
