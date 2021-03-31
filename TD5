@@ -7,6 +7,7 @@ participant B as ":Caissier"
 participant C as ":Caisse"
 
 A -> B: arrive
+activate B
 
 participant Tapis as "Tapis"
 
@@ -23,6 +24,8 @@ loop "Pour chaque article"
         B->C: saisir(Qté)
     end
 
+    C-->A:Prix
+    C-->A: Libellé
 end
 participant Article as ":Article"
 
