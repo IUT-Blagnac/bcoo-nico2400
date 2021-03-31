@@ -26,7 +26,17 @@ loop "Pour chaque article"
 
     C-->A:Prix
     C-->A: Libellé
+    C-->B:Prix
+    C-->B: Libellé
 end
+
+B -> C:Fin
+
+    c-->A:montant
+    c-->B:montant
+
+
 participant Article as ":Article"
+
 
 @enduml 
