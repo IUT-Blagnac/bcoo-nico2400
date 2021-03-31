@@ -12,16 +12,18 @@ participant Tapis as "Tapis"
 
 A -> Tapis: déposer
 
-activate B
-B -> C: step
+activate Tapis
 
-activate C
-C -> C: action
-C --> B: step
+loop "Pour chaque article"
+    B -> Tapis: PrendreArticle
+    B-> C: Scan
+    activate C
 
-B --> A: step
-deactivate B
+    opt "qté>1"
+        B->C: saisir(Qté)
+    end
 
+end
 participant Article as ":Article"
 
 @enduml 
