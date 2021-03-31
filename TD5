@@ -20,6 +20,9 @@ loop "Pour chaque article"
     B-> C: Scan
     activate C
 
+    C-->Article:getPrix()
+    C-->Article:getLibellé()
+
     opt "qté>1"
         B->C: saisir(Qté)
     end
