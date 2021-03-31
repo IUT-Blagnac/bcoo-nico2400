@@ -3,7 +3,8 @@
 hide footbox
 
 participant A as ":client"
-participant B as ":Caisse"
+participant B as ":Caissier"
+participant C as ":Caisse"
 
 A -> B: arrive
 
