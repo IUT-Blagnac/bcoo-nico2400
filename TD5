@@ -15,7 +15,7 @@ A -> Tapis: déposer
 
 activate Tapis
 
-loop "Pour chaque article"
+loop "Pour chaque article a"
     B -> Tapis: PrendreArticle
     B-> C: Scan(a)
     activate C
