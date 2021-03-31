@@ -19,10 +19,18 @@ loop "Pour chaque article a"
     B -> Tapis: PrendreArticle
     B-> C: Scan(a)
     activate C
-
+    
+    
+    participant Article as ":Article"
+    
+    par
     C-->Article:getPrix(a)
     C-->Article:getLibellé(a)
 
+    end
+
+    
+    else
     opt "qté>1"
         B->C: saisir(Qté)
     end
@@ -39,7 +47,6 @@ B -> C:Fin
     c-->B:montant
 
 
-participant Article as ":Article"
 
 
 @enduml 
