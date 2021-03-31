@@ -1,1 +1,24 @@
 
+@startuml 
+
+hide footbox
+
+participant A as ":client"
+participant B as ":Caisse"
+
+A -> B: arrive
+
+participant Tapis as "Tapis"
+activate B
+B -> C: step
+
+activate C
+C -> C: action
+C --> B: step
+
+B --> A: step
+deactivate B
+
+participant Article as ":Article"
+
+@enduml 
