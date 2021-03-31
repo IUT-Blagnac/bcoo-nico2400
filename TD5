@@ -17,11 +17,11 @@ activate Tapis
 
 loop "Pour chaque article"
     B -> Tapis: PrendreArticle
-    B-> C: Scan
+    B-> C: Scan(a)
     activate C
 
-    C-->Article:getPrix()
-    C-->Article:getLibellé()
+    C-->Article:getPrix(a)
+    C-->Article:getLibellé(a)
 
     opt "qté>1"
         B->C: saisir(Qté)
