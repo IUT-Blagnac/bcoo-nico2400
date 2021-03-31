@@ -29,7 +29,7 @@ loop "Pour chaque article a"
 
     end
 
-    
+
     else
     opt "qté>1"
         B->C: saisir(Qté)
@@ -43,10 +43,16 @@ end
 
 B -> C:Fin
 
-    c-->A:montant
-    c-->B:montant
+c-->A:montant
+c-->B:montant
 
+A ->B:payer en liquide (s)
+B->C: encaisser (s)
 
+C -->B: reste à rendre
+B->A :rendre (reste)
 
-
+C->C:enregister vente
+C-->B:imprimer ticket
+B->A:donne ticket
 @enduml 
